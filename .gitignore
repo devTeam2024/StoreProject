@@ -1,0 +1,40 @@
+# Compiled class file
+*.class
+
+# Log files
+*.log
+
+# IntelliJ IDEA
+.idea/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Maven
+target/
+
+# Gradle
+build/
+.gradle/
+
+# Dependencies
+# Maven Dependency Directory
+/.m2/
+
+# Gradle Dependency Directory
+/.gradle/
+
+# Compiled bytecode
+/bin/
+/classes/
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Operating System files
+.DS_Store
+Thumbs.db
