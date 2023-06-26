@@ -7,10 +7,11 @@ public class PojoClas {
     private int miktar;
     private String birim;
     private String raf;
-       private static int sayac=1000;
+    private static int sayac=1000;
+
     protected PojoClas(String urunIsmi, String uretici, int miktar, String birim, String raf) {
         sayac++;
-        this.id = sayac;
+        this.id =sayac;
         this.urunIsmi = urunIsmi;
         this.uretici = uretici;
         this.miktar = miktar;

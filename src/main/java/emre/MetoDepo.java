@@ -8,15 +8,24 @@ public class MetoDepo {
 
     protected void urunTanimlama(Map<Integer, PojoClas> urunler, String urunIsmi,
                                  String uretici, String birim) {
-        PojoClas urun = new PojoClas(urunIsmi, uretici, 0, birim, null);
-        if (!urunler.containsValue(urun)){
-        urunler.put(urun.getId(), urun);}else {
-            System.out.println("daha once tanimlanmis");
+        boolean urunYok = true;
+        for (PojoClas urun : urunler.values()) {
+            if (urun.getUrunIsmi().equalsIgnoreCase(urunIsmi)
+                 && urun.getUretici().equalsIgnoreCase(uretici)
+                     && urun.getBirim().equalsIgnoreCase(birim)) {
+                urunYok = false;
+                System.out.println("urun zaten ekli");
+                break;
+            }
+        }
+        if (urunYok) {
+            PojoClas urun = new PojoClas(urunIsmi, uretici, 0, birim, null);
+            urunler.put(urun.getId(), urun);
         }
     }
 
     protected void tanimlananUrunListele(Map<Integer, PojoClas> urunler) {
-        System.out.printf("%10s %10s %10s %10s %10s %10s %n", "ID", "Ürün İsmi", "Üretici", "Miktar", "Birim", "Raf");
+        System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %n", "ID", "Ürün İsmi", "Üretici", "Miktar", "Birim", "Raf");
         System.out.println("===============================================================");
         for (PojoClas urun : urunler.values()) {
             ekranGoruntusu(urun);
@@ -24,7 +33,7 @@ public class MetoDepo {
     }
 
     protected void raftakiUrunListele(Map<Integer, PojoClas> urunler) {//printfn ile yapacagim
-        System.out.printf("%10s %10s %10s %10s %10s %10s %n", "ID", "Ürün İsmi", "Üretici", "Miktar", "Birim", "Raf");
+        System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %n", "ID", "Ürün İsmi", "Üretici", "Miktar", "Birim", "Raf");
         System.out.println("==============================================================");
         for (PojoClas urun : urunler.values()) {
             if (urun.getRaf() != null) {
@@ -79,7 +88,7 @@ public class MetoDepo {
     }
 
     protected void suzmeUrunIsmi(Map<Integer, PojoClas> urunler, String urunIsmi) {
-        System.out.printf("%10s %10s %10s %10s %10s %10s %n", "ID", "Ürün İsmi", "Üretici", "Miktar", "Birim", "Raf");
+        System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %n", "ID", "Ürün İsmi", "Üretici", "Miktar", "Birim", "Raf");
         System.out.println("================================================================");
         for (PojoClas urun : urunler.values()) {
             if (urunIsmi.equalsIgnoreCase(urun.getUrunIsmi())) {
@@ -112,13 +121,12 @@ public class MetoDepo {
     protected void ekranGoruntusu(PojoClas urun) {
 
 
-
-            System.out.printf("%10s %10s %10s %10s %10s %10s %n",
-                    urun.getId(),
-                    urun.getUrunIsmi(),
-                    urun.getUretici(),
-                    urun.getMiktar(),
-                    urun.getBirim(),
-                    urun.getRaf());
-        }
+        System.out.printf("%-10s %-10s %-10s %-10s %-10s %-10s %n",
+                urun.getId(),
+                urun.getUrunIsmi(),
+                urun.getUretici(),
+                urun.getMiktar(),
+                urun.getBirim(),
+                urun.getRaf());
     }
+}
