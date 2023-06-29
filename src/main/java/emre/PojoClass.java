@@ -1,17 +1,17 @@
 package emre;
 
-public class PojoClas {
+public class PojoClass {
     private int id;
     private String urunIsmi;
     private String uretici;
     private int miktar;
     private String birim;
     private String raf;
-    private static int sayac=1000;
+    public static int sayac = 1000;
 
-    protected PojoClas(String urunIsmi, String uretici, int miktar, String birim, String raf) {
-        sayac++;
-        this.id =sayac;
+    protected PojoClass(String urunIsmi, String uretici, int miktar, String birim, String raf) {
+
+        this.id = ++sayac;
         this.urunIsmi = urunIsmi;
         this.uretici = uretici;
         this.miktar = miktar;
@@ -72,7 +72,8 @@ public class PojoClas {
                 ", miktar: " + miktar +
                 ", birim: " + birim +
                 ", raf: " + raf;
-    }}
+    }
+}
 
 
 
