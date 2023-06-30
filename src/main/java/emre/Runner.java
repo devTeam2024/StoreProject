@@ -10,7 +10,7 @@ public class Runner {
         Scanner input = new Scanner(System.in);
         Map<Integer, PojoClass> urunler = new HashMap<>();
 
-        metotDepo.fakeUrun(urunler); // Fake products for testing
+        metotDepo.fakeUrun(urunler); // test icin Fake urunler eklendi
 
         while (true) {
             System.out.println("========================== İŞLEMLER =======================");
@@ -51,7 +51,7 @@ public class Runner {
                 case "3":
                     System.out.print("Rafa koymak istediğiniz urunun ID'sini giriniz: ");
                     id = input.nextInt();
-                    input.nextLine(); // Consume the new line character
+                    input.nextLine(); // Yeni satır karakterini tüketmek için kullanılır.
 
                     metotDepo.urunuRafaKoy(urunler, id, input);
                     metotDepo.raftakiUrunleriListele(urunler);
@@ -59,7 +59,7 @@ public class Runner {
                 case "4":
                     System.out.print("Çıkarmak istediğiniz ürünün ID'sini giriniz: ");
                     id = input.nextInt();
-                    input.nextLine(); // Consume the new line character
+                    input.nextLine(); // Yeni satır karakterini tüketmek için kullanılır.
                     System.out.print("Kaç adet çıkarmak istersiniz: ");
 
                     metotDepo.urunCikisi(urunler, id, input);
@@ -81,7 +81,7 @@ public class Runner {
                 case "8":
                     System.out.print("Güncellemek istediğiniz ürünün ID'sini giriniz: ");
                     id = input.nextInt();
-                    input.nextLine(); // Consume the new line character
+                    input.nextLine(); // Yeni satır karakterini tüketmek için kullanılır.
 
                     metotDepo.urunGuncelleme(urunler, id, input);
                     metotDepo.tanimlananUrunListele(urunler);
@@ -89,7 +89,7 @@ public class Runner {
                 case "9":
                     System.out.print("Silmek istediğiniz ürünün ID'sini giriniz: ");
                     id = input.nextInt();
-                    input.nextLine(); // Consume the new line character
+                    input.nextLine(); // Yeni satır karakterini tüketmek için kullanılır.
                     metotDepo.urunSil(urunler, id);
                     metotDepo.tanimlananUrunListele(urunler);
                     break;

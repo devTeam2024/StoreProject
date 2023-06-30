@@ -48,7 +48,7 @@ public class MetotDepo {
     protected void urunGirisi(Map<Integer, PojoClass> urunler, int id,Scanner input) {
         if (urunler.containsKey(id)) {
             int miktar = input.nextInt();
-            input.nextLine(); // Consume the new line character
+            input.nextLine(); // Yeni satır karakterini tüketmek için kullanılır.
             PojoClass urun = urunler.get(id);
             int yeniMiktar = urun.getMiktar() + miktar;
             urun.setMiktar(yeniMiktar);
@@ -79,7 +79,7 @@ public class MetotDepo {
     protected void urunCikisi(Map<Integer, PojoClass> urunler, int id,Scanner input) {
         if (urunler.containsKey(id)) {
             int miktar = input.nextInt();
-            input.nextLine(); // Consume the new line character
+            input.nextLine(); // Yeni satır karakterini tüketmek için kullanılır.
             PojoClass urun = urunler.get(id);
             int mevcutMiktar = urun.getMiktar();
             if (miktar <= mevcutMiktar) {
